@@ -6,6 +6,7 @@ import { IoMdCloudUpload } from "react-icons/io";
 import { postData } from "@/utils/api";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { useRouter } from "next/navigation";
 
 const AddCategory = () => {
   const [formFields, setFormFields] = useState({
@@ -16,7 +17,7 @@ const AddCategory = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
-
+ const router = useRouter();
   const changeInput = (e) => {
     setFormFields(() => ({
       ...formFields,
@@ -24,17 +25,11 @@ const AddCategory = () => {
     }));
   };
 
-  const addCategory = (e) => {
+const addCategory = (e) => {
     e.preventDefault();
 
-    if (
-      !formFields.name ||
-      !formFields.color ||
-      formFields.images.length === 0
-    ) {
-      setSnackbarMessage(
-        "Please fill all fields and upload at least one image."
-      );
+    if (!formFields.name || !formFields.color || formFields.images.length === 0) {
+      setSnackbarMessage("Please fill all fields and upload at least one image.");
       setSnackbarSeverity("error");
       setOpenSnackbar(true);
       return;
@@ -50,7 +45,10 @@ const AddCategory = () => {
         setSnackbarMessage("Category created successfully!");
         setSnackbarSeverity("success");
         setOpenSnackbar(true);
-        setFormFields({ name: "", color: "", images: [] });
+
+        setTimeout(() => {
+          router.push("/category");
+        }, 10);
       })
       .catch((err) => {
         setSnackbarMessage("Failed to create category.");
