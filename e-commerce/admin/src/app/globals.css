@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.light {
+  --background: #f3f3ff;
+  --foreground: #111113;
+}
+
+.dark {
+  --background: #111113;
+  --foreground: #c8c8c8;
+}
+
+.light ::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.dark ::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #161616;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  overflow-x: hidden !important;
+
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.actions button {
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .actions button {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.MuiTableHead-root th {
+  background: #f1f1f1 !important;
+  font-weight: 600 !important;
+  padding: 15px 16px !important;
+}
+
+.dark thead.MuiTableHead-root th {
+  background: #1f1f1f !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark table tr td {
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+}
+
+.dark .MuiTablePagination-selectLabel,
+.dark .MuiSelect-icon,
+.dark .MuiTablePagination-displayedRows,
+.dark .MuiTablePagination-select,
+.dark .MuiIconButton-root {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark .MuiPaper-elevation {
+  background: #1f1f1f !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+
+}
+
+.dark .MuiIconButton-root.Mui-disabled {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark .MuiListItemIcon-root {
+  color: #fefefebd !important;
+}
+
+.dark .css-x6cj71-MuiPaper-root-MuiPopover-paper-MuiMenu-paper::before {
+  background: #1f1f1f !important;
+}
+
+.dark .MuiCheckbox-root {
+  color: hsla(0, 0%, 100%, .8) !important;
+}
+
+.dark .MuiRating-icon.MuiRating-iconEmpty {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+form .MuiSelect-root {
+  background: #f3f4f6 !important;
+  height: 45px !important;
+  width: 500px !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark form .MuiSelect-root {
+  background: #1f2937 !important;
+  color: #9ca3af !important;
+
+}
+
+form .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+form .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  padding: 2px !important;
+}
+
+form .css-6mustt-MuiFormControl-root {
+  margin: 10px 0px !important;
+}
+
+.rsw-editor {
+  min-height: 180px !important;
+  background: #f3f4f6 !important;
+  border: 1px solid rgba(233, 229, 229, 0.8) !important;
+}
+
+.dark .rsw-editor {
+  background: #1f2937 !important;
+}
+
+.dark .rsw-separator {
+  border: 0.5px solid rgba(255, 255, 255, 0.1) !important;
+
+}
+
+.dark .rsw-toolbar {
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.4) !important;
+  background-color: #1f2937 !important;
+}
+
+.dark .rsw-btn {
+  color: #ffffffb3 !important;
+  background-color: #1f2937 !important;
+}
+
+.dark .rsw-dd {
+  color: #ffffffb3 !important;
+  background-color: #1f2937 !important;
+}
+
+.imgUploadBox {
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 1000%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col {
+  flex: 0 0 50%; 
+  max-width: 50%;
+  padding: 0 15px !important;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+.editModel .css-10d30g3-MuiPaper-root-MuiDialog-paper{
+width: 600px !important;
+}
