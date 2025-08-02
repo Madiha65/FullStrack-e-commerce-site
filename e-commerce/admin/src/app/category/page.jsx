@@ -25,7 +25,7 @@ import { FaRegImages } from "react-icons/fa6";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
-import { useRouter } from "next/navigation";
+
 const columns = [
   { id: "Image", label: "Image", minWidth: 150 },
   { id: "Category", label: "Category", minWidth: 100 },
@@ -36,13 +36,13 @@ const columns = [
 const Category = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
- const [catData, setCatData] = useState([]);
-  const router = useRouter();
+  const [catData, setCatData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState({
     name: "",
     color: "",
     images: [],
   });
+
   const [open, setOpen] = React.useState(false);
   const [editId, setEditId] = useState();
   const [deletingId, setDeletingId] = useState(null);
@@ -52,28 +52,14 @@ const Category = () => {
   const handleClose = () => {
     setOpen(false);
   };
- const fetchCategories = () => {
-    fetchDataFromApi("/api/get-category").then((res) => {
-      setCatData(res.categorys || []);
-    });
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchCategories();
+    fetchDataFromApi("/api/get-category").then((res) => {
+      setCatData(res.categorys || []);
+      console.log(res.categorys);
+    });
   }, []);
-
-  
-  useEffect(() => {
-    const handleVisibility = () => {
-      if (document.visibilityState === "visible") {
-        fetchCategories();
-      }
-    };
-    document.addEventListener("visibilitychange", handleVisibility);
-    return () => document.removeEventListener("visibilitychange", handleVisibility);
-  }, []);
-
 
   const editCategory = (id) => {
     console.log("Editing category ID:", id);
